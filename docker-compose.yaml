@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   web:
     image: php:8.0-apache
@@ -15,8 +15,10 @@ services:
       MYSQL_DATABASE: database
       MYSQL_USER: user
       MYSQL_PASSWORD: password
+      MYSQL_ROOT_HOST: '%'
     ports:
       - "3306:3306"
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     ports:
